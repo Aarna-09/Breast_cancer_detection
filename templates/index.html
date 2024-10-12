@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Detection</title>
+    <style>
+        /* Add some styling for the form box */
+        .form-container {
+            border: 2px solid #000;
+            padding: 20px;
+            width: 300px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7fa;
+        }
+
+        h2 {
+            color: #00796b;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+
+        h3 {
+            color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <h2>Breast Cancer Detection</h2>
+
+    <!-- Form with a box (container) around it -->
+    <div class="form-container">
+        <form method="POST" action="/predict">
+            <!-- Input fields for each feature -->
+            <label>Clump Thickness:</label>
+            <input type="text" name="clump_thickness" required><br><br>
+
+            <label>Uniformity of Cell Size:</label>
+            <input type="text" name="cell_size" required><br><br>
+
+            <label>Uniformity of Cell Shape:</label>
+            <input type="text" name="cell_shape" required><br><br>
+
+            <label>Marginal Adhesion:</label>
+            <input type="text" name="marginal_adhesion" required><br><br>
+
+            <label>Single Epithelial Cell Size:</label>
+            <input type="text" name="epithelial_cell_size" required><br><br>
+
+            <label>Bare Nuclei:</label>
+            <input type="text" name="bare_nuclei" required><br><br>
+
+            <label>Bland Chromatin:</label>
+            <input type="text" name="bland_chromatin" required><br><br>
+
+            <label>Normal Nucleoli:</label>
+            <input type="text" name="normal_nucleoli" required><br><br>
+
+            <label>Mitoses:</label>
+            <input type="text" name="mitoses" required><br><br>
+
+            <label>Sample Code Number:</label>
+            <input type="text" name="sample_code_number" required><br><br>
+
+            <!-- Submit button -->
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    <!-- Display the prediction -->
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
